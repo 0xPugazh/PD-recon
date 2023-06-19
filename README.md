@@ -31,4 +31,4 @@ Options:
 + ``./PD-recon.sh --input 192.168.0.0/16`` for cidr ranges
 
 ## Acknowledgements
-This project utilizes various tools provided by [Project Discovery](https://github.com/projectdiscovery). I would like to express our gratitude to the entire Project Discovery team for their dedication in developing and maintaining these powerful tools.
+This project utilizes various tools provided by [Project Discovery](https://github.com/projectdiscovery). I would like to express my gratitude to the entire Project Discovery team for their dedication in developing and maintaining these powerful tools.
