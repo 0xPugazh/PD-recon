@@ -27,7 +27,8 @@ print_banner() {
   echo -e "  / /_/ / / / /    / ___/ _ \/ ___/ __ \/ __ \\"
   echo -e " / ____/ /_/ /    / /  /  __/ /__/ /_/ / / / /"
   echo -e "/_/   /_____/    /_/   \___/\___/\____/_/ /_/ "
-  echo -e "                                  @0xPugazh"
+  echo -e "						                                    "                                  
+  echo -e "					                              @0xPugazh"
   echo -e "${NC}"
 }
 
@@ -93,6 +94,16 @@ run_chaos() {
   echo -e "${GREEN}Chaos completed.${NC}"
 }
 
+run_dnsx() {
+  domain="$1"
+  wordlist="$2"
+  output_dir="$3"
+  echo -e "${YELLOW}Running Dnsx${NC}"
+  $DNSX_PATH -l "$domain" -w "$wordlist" -silent -o "$output_dir/dnsx" &
+  spinner $!
+  echo -e "${GREEN}Dnsx completed.${NC}"
+}
+
 run_alterx() {
   input_file="$1"
   output_dir="$2"
@@ -100,16 +111,6 @@ run_alterx() {
   cat "$input_file" | $ALTERX_PATH -silent -o "$output_dir/alterx" &
   spinner $!
   echo -e "${GREEN}Alterx completed.${NC}"
-}
-
-run_dnsx() {
-  input_file="$1"
-  resolvers="$2"
-  output_dir="$3"
-  echo -e "${YELLOW}Running Dnsx${NC}"
-  $DNSX_PATH -l "$input_file" -r "$resolvers" -silent -o "$output_dir/dnsx" &
-  spinner $!
-  echo -e "${GREEN}Dnsx completed.${NC}"
 }
 
 run_naabu() {
@@ -192,7 +193,7 @@ run_subfinder "$input" "$output_dir"
   run_shuffledns "$input" "$wordlist" "$resolvers" "$output_dir"
   run_chaos "$input" "$api_key" "$output_dir"
   run_alterx "$input" "$output_dir"
-  run_dnsx "$input" "$resolvers" "$output_dir"
+  run_dnsx "$input" "$wordlist" "$output_dir"
   run_naabu "$input" "$output_dir"
   run_httpx "$input" "$output_dir"
   run_katana "$input" "$output_dir"
