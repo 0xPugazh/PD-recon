@@ -30,5 +30,8 @@ Options:
 + ``./PD-recon.sh --input target.com`` for domain
 + ``./PD-recon.sh --input 192.168.0.0/16`` for cidr ranges
 
+## Support Me
+<a href="https://www.buymeacoffee.com/0xPugazh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Acknowledgements
 This project utilizes various tools provided by [Project Discovery](https://github.com/projectdiscovery). I would like to express my gratitude to the entire Project Discovery team for their dedication in developing and maintaining these powerful tools.
